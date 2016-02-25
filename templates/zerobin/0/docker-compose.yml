@@ -1,0 +1,16 @@
+zerobin-server:
+  labels:
+    io.rancher.sidekicks: zerobin-data
+  image: mdns/zerobin:0.19
+  volumes_from:
+  - zerobin-data
+
+zerobin-data:
+  labels:
+    io.rancher.container.start_once: 'true'
+  entrypoint:
+  - /bin/true
+  image: mdns/zerobin:0.19
+  volumes:
+  - /www/data
+

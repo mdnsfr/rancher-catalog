@@ -1,0 +1,22 @@
+.catalog:
+  name: ZeroBin
+  version: 0.19-0
+  description: |
+    ZeroBin is a minimalist, opensource online pastebin where the server has zero knowledge of pasted data.
+    Data is encrypted/decrypted in the browser using 256 bits AES.
+  minimum_rancher_version: v0.56.0
+  maintainer: "Alexis Ducastel <alexis@ducastel.net>"
+  uuid: zerobin-0
+
+zerobin-server:
+  scale: 1
+  health_check:
+    port: 80
+    interval: 30000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 2000
+
+zerobin-data:
+  scale: 1
