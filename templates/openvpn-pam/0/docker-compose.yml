@@ -18,7 +18,7 @@ openvpn-pam-server:
     VPNPOOL_NETWORK: ${VPNPOOL_NETWORK}
     VPNPOOL_CIDR: ${VPNPOOL_CIDR}
   labels:
-    io.rancher.sidekicks: openvpn-pam-data2
+    io.rancher.sidekicks: openvpn-pam-data
   image: mdns/rancher-openvpn-pam:2.3.4-1
   privileged: true
   volumes_from:
