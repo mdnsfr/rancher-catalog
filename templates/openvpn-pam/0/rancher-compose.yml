@@ -80,6 +80,13 @@
       required: true
       default: "foo@example.com"
       type: "string"
+      
+    - variable: "OPENVPN_EXTRACONF"
+      description: "Optionnal custom extra config to let you customize OpenVPN server config, for example to push your own custom route"
+      label: "OpenVPN custom config:"
+      required: false
+      default: ""
+      type: "multiline"
 
 openvpn-pam-data:
   scale: 1

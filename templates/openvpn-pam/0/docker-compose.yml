@@ -19,6 +19,7 @@ openvpn-pam-server:
     CERT_OU: ${CERT_OU}
     VPNPOOL_NETWORK: ${VPNPOOL_NETWORK}
     VPNPOOL_CIDR: ${VPNPOOL_CIDR}
+    OPENVPN_EXTRACONF: ${OPENVPN_EXTRACONF}
   labels:
     io.rancher.sidekicks: openvpn-pam-data
   image: mdns/rancher-openvpn-pam:2.3.4-1
