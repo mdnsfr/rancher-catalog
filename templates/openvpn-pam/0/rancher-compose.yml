@@ -85,3 +85,10 @@ openvpn-pam-data:
   scale: 1
 openvpn-pam-server:
   scale: 1
+  health_check:
+    port: 1194
+    interval: 30000
+    unhealthy_threshold: 5
+    strategy: none
+    healthy_threshold: 2
+    response_timeout: 2000

@@ -3,11 +3,15 @@ openvpn-pam-data:
     io.rancher.container.start_once: 'true'
   entrypoint:
   - /bin/true
-  image: busybox
+  image: mdns/rancher-openvpn-pam:2.3.4-1
   volumes:
   - /etc/openvpn/
+  - /etc/passwd
+  - /etc/shadow
 
 openvpn-pam-server:
+  ports:
+  - 1194:1194/tcp
   environment:
     CERT_COUNTRY: ${CERT_COUNTRY}
     CERT_PROVINCE: ${CERT_PROVINCE}
