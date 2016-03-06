@@ -18,31 +18,45 @@
         - ldap
       
     - variable: "AUTH_LDAP_URL"
-      description: "LDAP server url, ex: ldap(s)://hostname[:port]"
+      description: "LDAP server url, ex: ldap[s]://hostname[:port]"
       label: "AUTH LDAP URL:"
       required: true
-      default: "ldap(s)://hostname[:port]"
+      default: "ldap[s]://hostname[:port]"
       type: "string"
   
     - variable: "AUTH_LDAP_PATTERN"
-      description: "DN syntax to use in ldap login process, with a parameter $username, ex : uid=$username,ou=People,dc=acme,dc=tld"
+      description: "DN syntax to use in ldap login process, with a parameter $username, ex : cn=$username,dc=acme,dc=tld"
       label: "AUTH LDAP PATTERN:"
       required: true
-      default: "uid=$username,ou=People,dc=acme,dc=tld"
+      default: "cn=$username,dc=acme,dc=tld"
       type: "string"
   
+    - variable: "REMOTE_IP"
+      description: "Ip address or hostname that will be set in client configuration, you can leave default values and replace them in client config later"
+      label: "OpenVPN server endpoint address:"
+      required: true
+      default: "IP-address-or-hostname"
+      type: "string"
+      
+    - variable: "REMOTE_PORT"
+      description: "TCP port that will be set in client configuration, you can leave default values and replace them in client config later"
+      label: "OpenVPN server endpoint port :"
+      required: true
+      default: "10.43.0.0"
+      type: "string"
+      
     - variable: "VPNPOOL_NETWORK"
       description: "VPN subnet for OpenVPN to draw client addresses from"
       label: "Network pool:"
       required: true
-      default: "10.8.0.0"
+      default: "10.43.0.0"
       type: "string"
       
     - variable: "VPNPOOL_CIDR"
       description: "CIDR netmask for VPN subnet"
       label: "CIDR netmask:"
       required: true
-      default: "24"
+      default: "16"
       type: "enum"
       options:
         - 16
@@ -95,7 +109,7 @@
       description: "Organizational Unit part of VPN CA "
       label: "Certificate OU:"
       required: true
-      default: "OPS"
+      default: "IT"
       type: "string"
       
     - variable: "CERT_EMAIL"
