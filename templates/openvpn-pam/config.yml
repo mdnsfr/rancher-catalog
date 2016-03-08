@@ -1,5 +1,0 @@
-name: OpenVPN-PAM
-description: |
-  OpenVPN for Rancher with PAM authentication
-version: 2.3.4-1
-category: Networking
