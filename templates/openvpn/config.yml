@@ -1,5 +1,0 @@
-name: OpenVPN
-description: |
-  OpenVPN for Rancher with modular authentication
-version: 1.0
-category: Networking
