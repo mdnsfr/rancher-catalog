@@ -38,7 +38,7 @@
   
     - variable: "AUTH_LDAP_BINDPWD"
       description: "(Optionnal) Bind password to perfrom search operation, leave blank if not required" 
-      label: "LDAP Bind DN:"
+      label: "LDAP Bind password:"
       required: false
       default: ""
       type: "password"
